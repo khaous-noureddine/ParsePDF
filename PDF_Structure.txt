@@ -1,0 +1,36 @@
+
+Structure des Fichiers PDF
+Les fichiers PDF sont créés à l'aide d'un langage de description de page développé par Adobe. Ils se composent de plusieurs éléments clés :
+
+En-têtes (Headers) : Ils indiquent la version du PDF.
+Corps (Body) : Il contient les objets du document, tels que le texte, les images et les polices.
+Table de Références Croisées (XRef) : Elle indexe les objets du document.
+Bande-annonce (Trailer) : Elle contient des informations sur le fichier.
+Les PDF sont considérés comme des images vectorielles car ils utilisent des instructions mathématiques pour décrire les formes et les textes, comme les courbes de Bézier définies par des équations paramétriques.
+
+Variantes de PDF
+Il existe plusieurs variantes de PDF adaptées à différents usages :
+
+PDF/A : Utilisé pour l'archivage.
+PDF/X : Utilisé pour l'impression.
+PDF/E : Utilisé pour l'ingénierie.
+PDF/UA : Utilisé pour l'accessibilité.
+Bibliothèques de Parsing de PDF
+PyPDF2 (Python)
+Cette bibliothèque permet l'extraction de texte, la fusion de PDF et l'ajout de métadonnées. Elle lit les objets du PDF et les décode pour extraire le texte et les images.
+
+PDFBox (Java)
+Cette bibliothèque permet l'extraction de texte, la manipulation de PDF et la validation de PDF/A. Elle utilise une API pour accéder aux objets internes du PDF et les manipuler.
+
+PDF.js (JavaScript)
+Cette bibliothèque permet le rendu de PDF dans le navigateur et l'extraction de texte. Elle utilise une combinaison de JavaScript et de WebAssembly pour interpréter et rendre les PDF.
+
+Extraction d'Informations à partir des PDF
+Texte
+PyPDF2 (Python) et PDFBox (Java) : Ces bibliothèques lisent les objets du PDF, souvent stockés dans des flux de données compressés. Elles décompressent et décodent ces flux pour extraire le texte brut.
+Tables
+pdfplumber (Python) : Cette bibliothèque analyse chaque page du PDF pour identifier les structures tabulaires. Elle utilise des algorithmes pour détecter les lignes et les colonnes et extrait les données des tables de manière structurée.
+Graphes
+Adobe Acrobat Pro et Bibliothèques Spécialisées : Ces outils analysent les objets graphiques définis dans le PDF, interprètent et reconstruisent les graphes, et extraient les données en analysant les coordonnées et les transformations appliquées aux objets graphiques.
+Images
+PyMuPDF (Python) : Cette bibliothèque identifie les objets d'image dans le PDF, décompresse les flux de données des images et extrait les données brutes. Elle permet ensuite de sauvegarder ces données dans un format de fichier approprié.
